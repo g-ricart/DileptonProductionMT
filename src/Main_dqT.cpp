@@ -664,7 +664,9 @@ int main(int argc, char **argv) {
 //	    }
 //        }
         for(int i=0;i<NSamples;i++){
-            std::cerr << i << "/" << NSamples << '\r';
+            if (i % 100000 == 0) {
+                std::cerr << i << "/" << NSamples << '\r';
+            }
             for(int iQ=0;iQ<NQ;iQ++){
                 double Q=QMin+(QMax-QMin)*iQ/(NQ-1);
                 for(int iqT=0;iqT<NqT;iqT++){
